@@ -39,7 +39,7 @@ subplot(4,1,1)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'k','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-5 0])
 
 %% Integration from ocean upstream without C_i and  with small Fr0  and large gamma
@@ -77,13 +77,14 @@ subplot(4,1,1)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'r--','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-5 0])
 
 l_p = 1/(3*gamma*Cd*Fr0^2);
 plot(-l_p,0,'m.','markersize',30)
 legend('C_i=0.1','C_i=0','Theory (l_p)','Location','NorthWest')
 title('Fr_0<<1, \gamma>>1')
+text(0.01,1.00,'a','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',30,'fontweight','bold','Color','k')
 %% Integration from ocean upstream with all terms and large Fr0
 h=[];
 x=[];
@@ -120,7 +121,7 @@ subplot(4,1,2)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'k','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-1 0])
 %% Integration from ocean upstream without C_i and large Fr0
 h=[];
@@ -158,19 +159,20 @@ subplot(4,1,2)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'r--','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-1 0])
 
 l_p = 1/(3*gamma*Cd*Fr0^2);
 plot(-l_p,0,'m.','markersize',30)
 legend('C_i=0.1','C_i=0','Theory (l_p)','Location','NorthWest')
 title('Fr_0=0.5, \gamma>>1')
+text(0.01,1.00,'b','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',30,'fontweight','bold','Color','k')
 %% Integration from ocean upstream with all terms and medium gamma
 h=[];
 x=[];
 Ci = 1e-1;
 Fr0 = 1e-2;
-gamma=6;
+gamma=2;
 % Initial conditions
 h(1) = Fr0^(2/3);
 x(1) = 0;
@@ -202,7 +204,7 @@ subplot(4,1,3)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'k','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-1 0])
 %% Integration from ocean upstream without C_i and medium gamma
 h=[];
@@ -240,7 +242,7 @@ subplot(4,1,3)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'b--','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-1 0])
 %% Integration from ocean upstream without C_i and medium gamma
 h=[];
@@ -278,13 +280,14 @@ subplot(4,1,3)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'r--','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-1 0])
 
 l_p = 1/(3*gamma*Cd*Fr0^2);
 plot(-l_p,0,'m.','markersize',30)
 legend('C_i=0.1','C_i=0.01','C_i=0','Theory (l_p)','Location','NorthWest')
-title('Fr_0<<1, \gamma=6')
+title('Fr_0<<1, \gamma=2')
+text(0.01,1.00,'c','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',30,'fontweight','bold','Color','k')
 %% Integration from ocean upstream with all terms and zero gamma
 h=[];
 x=[];
@@ -322,7 +325,7 @@ subplot(4,1,4)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'k','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-30 0])
 
 %% Integration from ocean upstream without C_i and zero gamma
@@ -361,7 +364,7 @@ subplot(4,1,4)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'b--','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-30 0])
 
 %% Integration from ocean upstream without C_i and zero gamma
@@ -400,10 +403,11 @@ subplot(4,1,4)
 plot(linspace(0,min(x),100),interp1(x,1-h,linspace(0,min(x),100)),'r--','linewidth',3);hold on;
 set(gca,'fontsize',20)
 xlabel('x','fontsize',20)
-ylabel('h','fontsize',20)
+ylabel('1-h','fontsize',20)
 ylim([0 1]);%xlim([-30 0])
 
 l_u = 1/(4*Cd*Fr0^2);
 plot(-l_u,0,'m.','markersize',30)
 legend('C_i=0.1','C_i=0.01','C_i=0','Theory (l_u)','Location','NorthWest')
 title('Fr_0<<1, \gamma<<1')
+text(0.01,1.00,'d','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',30,'fontweight','bold','Color','k')

@@ -27,3 +27,5 @@ ylabel('\theta','fontsize',16)
 set(gca,'ColorScale','log','fontsize',20)
 colormap(brewermap([],'GnBu'));
 ylabel(cb,'L (m)')
+hold on
+contour(MULT'.*alphau_over_k_0,THETA',LSOH,[100 100],'Color',[0.5 0.5 0.5],'linewidth',3)

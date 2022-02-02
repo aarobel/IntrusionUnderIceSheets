@@ -57,11 +57,11 @@ ylabel(cb,'L (m)')
 title('\gamma=0','fontsize',16)
 set(gca,'fontsize',20,'ColorScale','log')
 colormap(brewermap([],'GnBu'));
-ylim(0.005.*[-1 1])
+ylim(0.005.*[-2 2])
 xlim([0.02 1])
 text(0.01,1.00,'a','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',30,'fontweight','bold','Color','w')
+hold on;contour(FR0',0.005.*THETA',Ls.*10,[100 100],'Color',[0.5 0.5 0.5],'linewidth',3)
 rectangle('Position',[0.02 -0.1*0.005 0.08 0.2*0.005],'EdgeColor','w','LineWidth',3)
-
 %% Zoomed Parameter sweep for gamma = 0 and Ci = 0.1 (free water sheet, low interfacial drag)
 % dxm = 1e-2;
 % gamma = 0;
@@ -120,7 +120,7 @@ set(gca,'fontsize',20,'ColorScale','log')
 colormap(brewermap([],'GnBu'));
 xlim([0.02 0.1])
 text(0.01,1.00,'b','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',30,'fontweight','bold','Color','w')
-
+hold on;contour(FR0',0.005.*THETA',Ls.*10,[100 100],'Color',[0.5 0.5 0.5],'linewidth',3)
 %% Parameter sweep for gamma = 3 and Ci = 0.1 (free water sheet, low interfacial drag)
 % dxm = 1e-2;
 % gamma = 3;
@@ -165,7 +165,7 @@ text(0.01,1.00,'b','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',
 % end
 
 % save('Intrusion_paramsweep_gamma3_zoomout.mat')
-load('Intrusion_paramsweep_gamma6_zoomout.mat')
+load('Intrusion_paramsweep_gamma2_zoomout.mat')
 Ls(Ls==100)=1000;
 [FR0,THETA] = meshgrid(Fr0s,thetas);
 figure(1);
@@ -173,13 +173,14 @@ subplot(2,2,3)
 pcolor(FR0',0.005.*THETA',Ls.*10);cb=colorbar;caxis([10 1e4]);shading('flat')
 xlabel('Fr_0','fontsize',16)
 ylabel('\theta','fontsize',16)
-title('\gamma=6','fontsize',16)
+title('\gamma=2','fontsize',16)
 set(gca,'fontsize',20,'ColorScale','log')
 colormap(brewermap([],'GnBu'));
 ylabel(cb,'L (m)')
-ylim(0.005.*[-1 1])
+ylim(0.005.*[-2 2])
 xlim([0.02 1])
 text(0.01,1.00,'c','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',30,'fontweight','bold','Color','w')
+hold on;contour(FR0',0.005.*THETA',Ls.*10,[100 100],'Color',[0.5 0.5 0.5],'linewidth',3)
 rectangle('Position',[0.02 -0.1*0.005 0.08 0.2*0.005],'EdgeColor','w','LineWidth',3)
 
 %% Zoomed Parameter sweep for gamma = 3 and Ci = 0.1 (free water sheet, low interfacial drag)
@@ -226,7 +227,7 @@ rectangle('Position',[0.02 -0.1*0.005 0.08 0.2*0.005],'EdgeColor','w','LineWidth
 % end
 
 % save('Intrusion_paramsweep_gamma3_zoomin.mat')
-load('Intrusion_paramsweep_gamma6_zoomin.mat')
+load('Intrusion_paramsweep_gamma2_zoomin.mat')
 Ls(Ls==100)=1000;
 [FR0,THETA] = meshgrid(Fr0s,thetas);
 figure(1);
@@ -234,11 +235,11 @@ subplot(2,2,4)
 pcolor(FR0',0.005.*THETA',Ls.*10);cb=colorbar;caxis([10 1e4]);shading('flat')
 xlabel('Fr_0','fontsize',16)
 ylabel('\theta','fontsize',16)
-title('\gamma=6','fontsize',16)
+title('\gamma=2','fontsize',16)
 set(gca,'fontsize',20,'ColorScale','log')
 colormap(brewermap([],'GnBu'));
 ylabel(cb,'L (m)')
 xlim([0.02 0.1])
 text(0.01,1.00,'d','Units', 'Normalized', 'VerticalAlignment', 'Top','fontsize',30,'fontweight','bold','Color','w')
-
+hold on;contour(FR0',0.005.*THETA',Ls.*10,[100 100],'Color',[0.5 0.5 0.5],'linewidth',3)
 set(1,'units','normalized','position',[0 0.1 0.5 0.6]);
